@@ -1,7 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-
 #include <QMainWindow>
 #include "core/tenni2s.cpp"
 #include "core/playercategory.h"
@@ -35,11 +34,10 @@ public:
     // void simulateNextTournament();
 
 private slots:
-
     void on_pushButton_addPlayer_clicked();
 
 private:
     Ui::MainWindow *ui;
 };
-#endif // MAINWINDOW_H
 
+#endif // MAINWINDOW_H
