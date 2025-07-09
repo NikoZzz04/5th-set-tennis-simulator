@@ -1,0 +1,15 @@
+QPushButton {
+    background-color: #444;
+    color: white;
+    border-radius: 6px;
+    padding: 6px 12px;
+}
+
+QPushButton#danger {
+    background-color: #c00;
+}
+
+QLabel.title {
+    font-size: 20px;
+    font-weight: bold;
+}
