@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "core/tenni2s.cpp"
 #include "core/playercategory.h"
 #include "core/tennis.h"
 #include "playermodel.h"

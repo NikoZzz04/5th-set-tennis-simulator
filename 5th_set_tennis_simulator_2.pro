@@ -10,7 +10,6 @@ CONFIG += c++17
 
 SOURCES += \
     core/playercategory.cpp \
-    core/tenni2s.cpp \
     core/tennis.cpp \
     main.cpp \
     mainwindow.cpp \
