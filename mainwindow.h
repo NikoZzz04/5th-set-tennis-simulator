@@ -17,24 +17,9 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
-private:
-    std::vector<Zawodnik> atpPlayersVector;
-    std::vector<Zawodnik> wtaPlayersVector;
-    std::vector<Turniej> season;
-    int currentTournamentIndex = 0;
-
-    PlayerModel* atpPlayers;
-    PlayerModel* wtaPlayers;
-
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
-    void updatePlayerList();
-    // void simulateNextTournament();
-
-private slots:
-    void on_pushButton_addPlayer_clicked();
 
 private:
     Ui::MainWindow *ui;
