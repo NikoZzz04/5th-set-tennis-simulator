@@ -9,6 +9,9 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    core/match.cpp \
+    core/matchresult.cpp \
+    core/player.cpp \
     core/playercategory.cpp \
     core/tennis.cpp \
     main.cpp \
@@ -16,6 +19,10 @@ SOURCES += \
     playermodel.cpp
 
 HEADERS += \
+    core/MatchRules.h \
+    core/match.h \
+    core/matchresult.h \
+    core/player.h \
     core/playercategory.h \
     core/tennis.h \
     mainwindow.h \
