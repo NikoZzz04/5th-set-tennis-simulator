@@ -2,8 +2,9 @@
 #define PLAYER_H
 
 #include<string>
+using namespace std;
 
-class Player
+class MatchSide
 {
     string name;
     string surname;
@@ -21,8 +22,8 @@ class Player
     float mentality;
     float intelligence;
 public:
-    Player(const string &name, const string &surname, int age, const string &nationality, float serve, float forehand, float backhand, float volley, float power, float speed, float stamina, float movement, float mentality, float intelligence);
-
+    MatchSide(const string &name, const string &surname, int age, const string &nationality, float serve, float forehand, float backhand, float volley, float power, float speed, float stamina, float movement, float mentality, float intelligence);
+    float getMidUm() const;
     string getName() const;
     void setName(const string &newName);
     string getSurname() const;

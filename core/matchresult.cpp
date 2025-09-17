@@ -1,4 +1,5 @@
 #include "matchresult.h"
+#include<stream>
 
 MatchResult::MatchResult() {
 
@@ -29,11 +30,11 @@ bool isDecidingSet(const MatchResult& match) {
     return currentSetNumber == maxSets;
 }
 }
-void MatchResult::assignPointTo(Player player) {
-    int& scoringPlayerPoints = (player == Player::A ? currentGame.pointsA : currentGame.pointsB);
-    int& opponentPoints      = (player == Player::A ? currentGame.pointsB : currentGame.pointsA);
-    int& scoringPlayerGames  = (player == Player::A ? currentSet.gamesA : currentSet.gamesB);
-    int& opponentGames       = (player == Player::A ? currentSet.gamesB : currentSet.gamesA);
+void MatchResult::assignPointTo(MatchSide player) {
+    int& scoringPlayerPoints = (player == MatchSide::A ? currentGame.pointsA : currentGame.pointsB);
+    int& opponentPoints      = (player == MatchSide::A ? currentGame.pointsB : currentGame.pointsA);
+    int& scoringPlayerGames  = (player == MatchSide::A ? currentSet.gamesA : currentSet.gamesB);
+    int& opponentGames       = (player == MatchSide::A ? currentSet.gamesB : currentSet.gamesA);
 
     scoringPlayerPoints++;
 
@@ -69,4 +70,39 @@ void MatchResult::assignPointTo(Player player) {
             }
         }
     }
+}
+std::string MatchResult::toString() const {
+    std::ostringstream out;
+
+    for (const auto& set : finishedSets) {
+        out << set.gamesA << ":" << set.gamesB;
+        if (set.decidedByTieBreak) out << " (TB)";
+        out << " ";
+    }
+
+    out << currentSet.gamesA << ":" << currentSet.gamesB << " ";
+
+    if (inTieBreak) {
+        out << "TB " << currentGame.pointsA << "-" << currentGame.pointsB;
+    } else {
+        out << formatTennisPoints(currentGame.pointsA, currentGame.pointsB)
+        << "-"
+        << formatTennisPoints(currentGame.pointsB, currentGame.pointsA);
+    }
+
+    return out.str();
+}
+int MatchResult::getSetsWonBy(MatchSide player) const{
+    int sets=0;
+    for(const auto& set : finishedSets) {
+        if ((player==MatchSide::A && set.gamesA>set.gamesB)||(player==MatchSide::B && set.gamesB>set.gamesA))
+            sets++;
+    }
+    return sets;
+}
+
+optional<MatchSide> MatchResult::getWinner() const{
+    if(getSetsWonBy(A)==setsToWin) return A;
+    if(getSetsWonBy(B)==setsToWin) return B;
+    return nullopt;
 }

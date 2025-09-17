@@ -16,7 +16,8 @@ SOURCES += \
     core/tennis.cpp \
     main.cpp \
     mainwindow.cpp \
-    playermodel.cpp
+    playermodel.cpp \
+    testmatch.cpp
 
 HEADERS += \
     core/MatchRules.h \
@@ -26,9 +27,13 @@ HEADERS += \
     core/playercategory.h \
     core/tennis.h \
     mainwindow.h \
-    playermodel.h
+    playermodel.h \
+    testmatch.h
 
-FORMS += mainwindow.ui
+FORMS += mainwindow.ui \
+    testmatch.ui
+
+FORMS += testmatch.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -37,3 +42,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DISTFILES += \
     styles.qss
+

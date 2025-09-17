@@ -6,7 +6,7 @@
 #include <string>
 #include <optional>
 
-enum class Player { A, B };
+enum class MatchSide { A, B };
 
 struct GameScore {
     int pointsA{0};
@@ -24,21 +24,21 @@ private:
     std::vector<SetScore> finishedSets;
     SetScore currentSet{};
     GameScore currentGame{};
-    MatchRules rules{};
+    const MatchRules& rules{};
     bool inTieBreak{false};
 
 public:
     MatchResult(const MatchRules& r) : rules(r) {}
 
-    void assignPointTo(Player player);
+    void assignPointTo(MatchSide player);
 
     const std::vector<SetScore>& getFinishedSets() const { return finishedSets; }
     const SetScore& getCurrentSet() const { return currentSet; }
     const GameScore& getCurrentGame() const { return currentGame; }
     const MatchRules& getRules() const { return rules; }
 
-    int getSetsWonBy(Player player) const;
-    std::optional<Player> getWinner() const; // wg rules.setsToWin
+    int getSetsWonBy(MatchSide player) const;
+    std::optional<MatchSide> getWinner() const; // wg rules.setsToWin
     std::string toString() const;
 };
 #endif // MATCHRESULT_H
