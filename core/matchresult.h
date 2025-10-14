@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 #include <optional>
+#include <sstream>
 
 enum class MatchSide { A, B };
 
@@ -28,7 +29,7 @@ private:
     bool inTieBreak{false};
 
 public:
-    MatchResult(const MatchRules& r) : rules(r) {}
+    MatchResult(const MatchRules& r): rules(r){}
 
     void assignPointTo(MatchSide player);
 

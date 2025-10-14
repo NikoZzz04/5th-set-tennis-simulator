@@ -1,13 +1,9 @@
 #include "match.h"
+std::pair<float,float>Match::getScale(){
+    auto scaleAtServeA=playerA.getMidUm()*1.50+playerB.getMidUm();
+    auto scaleAtServeB=playerA.getMidUm()+playerB.getMidUm()*1.50;
 
-Match::Match() {
-
-}
-int Match::getScale(float umA, float umB){
-    scaleAtServeA=umA*1,50+umB;
-    scaleAtServeB=umA+umB*1,50;
-
-    return scaleAtServeA, scaleAtServeB;
+    return {scaleAtServeA, scaleAtServeB};
 }
 MatchSide Match::simulatePoint()
 {

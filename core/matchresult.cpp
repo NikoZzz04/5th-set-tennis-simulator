@@ -1,9 +1,6 @@
 #include "matchresult.h"
-#include<stream>
+#include<iostream>
 
-MatchResult::MatchResult() {
-
-}
 namespace {
 std::string formatTennisPoints(int scoringPlayerPoints, int opponentPoints) {
     if (scoringPlayerPoints >= 3 && opponentPoints >= 3) {
@@ -101,8 +98,8 @@ int MatchResult::getSetsWonBy(MatchSide player) const{
     return sets;
 }
 
-optional<MatchSide> MatchResult::getWinner() const{
-    if(getSetsWonBy(A)==setsToWin) return A;
-    if(getSetsWonBy(B)==setsToWin) return B;
-    return nullopt;
+std::optional<MatchSide> MatchResult::getWinner() const{
+    if(getSetsWonBy(MatchSide::A)==getRules().setsToWin) return MatchSide::A;
+    if(getSetsWonBy(MatchSide::B)==getRules().setsToWin) return MatchSide::B;
+    return std::nullopt;
 }
