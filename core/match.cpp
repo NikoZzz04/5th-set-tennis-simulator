@@ -24,3 +24,6 @@ MatchSide Match::simulatePoint()
 
     return side;
 }
+bool Match::isNotEnded(){
+    return result->getWinner()==std::nullopt;
+}

@@ -103,3 +103,4 @@ std::optional<MatchSide> MatchResult::getWinner() const{
     if(getSetsWonBy(MatchSide::B)==getRules().setsToWin) return MatchSide::B;
     return std::nullopt;
 }
+

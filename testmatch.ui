@@ -25,10 +25,10 @@
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QLineEdit" name="lineEdit"/>
+      <widget class="QLineEdit" name="lineEdit_nameA"/>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_2"/>
+      <widget class="QLineEdit" name="skillA"/>
      </item>
      <item>
       <spacer name="horizontalSpacer">
@@ -44,10 +44,10 @@
       </spacer>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_3"/>
+      <widget class="QLineEdit" name="lineEdit_NameB"/>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_4"/>
+      <widget class="QLineEdit" name="lineEdit_SkillB"/>
      </item>
      <item>
       <spacer name="horizontalSpacer_2">
@@ -63,10 +63,10 @@
       </spacer>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_5"/>
+      <widget class="QLineEdit" name="lineEdit_SetsToWon"/>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_6"/>
+      <widget class="QLineEdit" name="lineEdit_GamesToSet"/>
      </item>
     </layout>
    </widget>
@@ -81,7 +81,7 @@
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
-      <widget class="QLabel" name="label_2">
+      <widget class="QLabel" name="PlayerA">
        <property name="text">
         <string>player 1</string>
        </property>
@@ -101,7 +101,7 @@
       </spacer>
      </item>
      <item>
-      <widget class="QLabel" name="player1">
+      <widget class="QLabel" name="res">
        <property name="text">
         <string>result</string>
        </property>
@@ -121,7 +121,7 @@
       </spacer>
      </item>
      <item>
-      <widget class="QLabel" name="label_3">
+      <widget class="QLabel" name="PlayerB">
        <property name="text">
         <string>player 2</string>
        </property>
